@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MK Hub design system — dark, gold-accented, premium security/events brand */
+
+@layer base {
+  :root {
+    /* Core surfaces */
+    --background: 0 0% 6.7%;            /* #111111 */
+    --foreground: 45 24% 92%;           /* #F0EDE6 */
+
+    --card: 0 0% 9.4%;                  /* #181818 */
+    --card-foreground: 45 24% 92%;
+
+    --popover: 0 0% 11.8%;              /* #1E1E1E */
+    --popover-foreground: 45 24% 92%;
+
+    /* Brand: gold */
+    --primary: 43 53% 54%;              /* #C9A84C */
+    --primary-foreground: 0 0% 6.7%;
+    --primary-glow: 43 70% 62%;         /* lighter gold */
+
+    --secondary: 0 0% 11.8%;
+    --secondary-foreground: 45 24% 92%;
+
+    --muted: 0 0% 11.8%;
+    --muted-foreground: 0 0% 53%;       /* #888 */
+
+    --accent: 43 53% 54%;
+    --accent-foreground: 0 0% 6.7%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 24% 92%;
+
+    --border: 43 30% 25%;
+    --input: 0 0% 14%;
+    --ring: 43 53% 54%;
+
+    --radius: 0.5rem;
+
+    /* Section accent colors */
+    --guards: 43 53% 54%;               /* gold */
+    --events: 158 50% 59%;              /* #5DCAA5 */
+    --mascots: 339 56% 58%;             /* #D4537E */
+
+    /* Status colors */
+    --status-pending: 38 92% 55%;       /* amber */
+    --status-confirmed: 158 50% 50%;    /* green */
+    --status-progress: 217 91% 60%;     /* blue */
+    --status-completed: 158 50% 40%;
+    --status-cancelled: 0 75% 55%;      /* red */
+    --status-refunded: 268 60% 65%;     /* purple */
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 53% 54%) 0%, hsl(43 70% 62%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(43 53% 54% / 0.15) 0%, transparent 60%);
+
+    /* Shadows */
+    --shadow-gold: 0 8px 24px -8px hsl(43 53% 54% / 0.4);
+    --shadow-card: 0 2px 12px -4px hsl(0 0% 0% / 0.5);
+
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, .display {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .badge-guards   { @apply text-[hsl(var(--guards))]   border-[hsl(var(--guards))]   bg-[hsl(var(--guards)/0.12)]; }
+  .badge-events   { @apply text-[hsl(var(--events))]   border-[hsl(var(--events))]   bg-[hsl(var(--events)/0.12)]; }
+  .badge-mascots  { @apply text-[hsl(var(--mascots))]  border-[hsl(var(--mascots))]  bg-[hsl(var(--mascots)/0.12)]; }
+}

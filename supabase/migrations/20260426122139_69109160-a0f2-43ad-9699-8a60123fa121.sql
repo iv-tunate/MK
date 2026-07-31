@@ -1,0 +1,1 @@
+ALTER TABLE public.service_photos ADD COLUMN IF NOT EXISTS caption text;
